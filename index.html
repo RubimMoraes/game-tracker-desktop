@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Jogos Zerados</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <h1>🎮 Jogos Zerados</h1>
+      <button id="btnAdicionar" class="btn-principal">+ Adicionar jogo</button>
+    </header>
+
+    <main>
+      <section id="jogosGrid" class="jogos-grid" aria-live="polite"></section>
+      <p id="estadoVazio" class="estado-vazio hidden">
+        Nenhum jogo cadastrado ainda. Clique em <strong>Adicionar jogo</strong>.
+      </p>
+    </main>
+
+    <dialog id="modalDetalhes" class="modal">
+      <article class="modal-card">
+        <button id="fecharDetalhes" class="modal-fechar" aria-label="Fechar">✕</button>
+        <img id="detImagem" class="det-imagem" alt="Capa do jogo" />
+        <div class="det-info">
+          <h2 id="detNome"></h2>
+          <p><strong>Tempo jogado:</strong> <span id="detTempo"></span></p>
+          <p><strong>Nota:</strong> <span id="detNota"></span></p>
+          <p><strong>Status:</strong> <span id="detStatus"></span></p>
+          <p><strong>Feedback:</strong></p>
+          <p id="detComentario" class="det-comentario"></p>
+        </div>
+      </article>
+    </dialog>
+
+    <dialog id="modalAdicionar" class="modal">
+      <form id="formAdicionar" class="modal-card form" method="dialog">
+        <h2>Adicionar jogo</h2>
+
+        <label>
+          Nome *
+          <input name="nome" type="text" required maxlength="80" />
+        </label>
+
+        <label>
+          URL/caminho da imagem
+          <input name="imagem" type="text" placeholder="https://... ou ./assets/imagens/capa.jpg" />
+        </label>
+
+        <label>
+          Tempo jogado (horas) *
+          <input name="tempo" type="number" min="0" step="1" required />
+        </label>
+
+        <label>
+          Nota (0 a 10)
+          <input name="nota" type="number" min="0" max="10" step="0.1" />
+        </label>
+
+        <label>
+          Feedback
+          <textarea name="comentario" rows="4" maxlength="500"></textarea>
+        </label>
+
+        <label class="status-field">
+          <input name="zerado" type="checkbox" />
+          Já foi zerado
+        </label>
+
+        <p id="erroFormulario" class="erro hidden"></p>
+
+        <div class="acoes-form">
+          <button type="button" id="cancelarAdicionar" class="btn-secundario">Cancelar</button>
+          <button type="submit" class="btn-principal">Salvar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

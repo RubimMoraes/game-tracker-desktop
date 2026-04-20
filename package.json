@@ -1,0 +1,12 @@
+{
+  "name": "gerenciador-jogos-zerados",
+  "version": "1.0.0",
+  "description": "Aplicativo desktop para registrar jogos zerados.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^35.0.0"
+  }
+}
