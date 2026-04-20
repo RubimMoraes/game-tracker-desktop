@@ -1,0 +1,174 @@
+:root {
+  --bg: #0f1115;
+  --bg-soft: #151922;
+  --card: #1b2130;
+  --text: #eaf0ff;
+  --muted: #99a4bd;
+  --accent: #c9ff05;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 24px 32px;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1a2130, var(--bg));
+  color: var(--text);
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.jogos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+}
+
+.card-jogo {
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: var(--card);
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-jogo:hover {
+  transform: translateY(-3px);
+}
+
+.card-jogo.zerado {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px #e4ff80aa;
+}
+
+.card-jogo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #0f1420;
+}
+
+.card-jogo h3 {
+  margin: 10px 4px 4px;
+  font-size: 0.95rem;
+}
+
+.btn-principal,
+.btn-secundario {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-principal {
+  background: var(--accent);
+  color: #10140a;
+}
+
+.btn-secundario {
+  background: #2a3245;
+  color: var(--text);
+}
+
+.modal {
+  border: 0;
+  border-radius: 16px;
+  padding: 0;
+  background: transparent;
+  max-width: min(700px, calc(100vw - 32px));
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-card {
+  background: var(--bg-soft);
+  border: 1px solid #2e3a56;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.det-imagem {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #0f1420;
+}
+
+.det-comentario {
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.modal-fechar {
+  float: right;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+input,
+textarea {
+  border: 1px solid #32405f;
+  border-radius: 10px;
+  padding: 10px;
+  background: #0f1420;
+  color: var(--text);
+}
+
+.acoes-form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.status-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.estado-vazio {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 28px;
+}
+
+.erro {
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}

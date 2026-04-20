@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "nome": "The Witcher 3",
+    "imagem": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
+    "tempo": 95,
+    "nota": 10,
+    "comentario": "História fantástica",
+    "zerado": true
+  }
+]
