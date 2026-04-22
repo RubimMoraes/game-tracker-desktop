@@ -1,0 +1,20 @@
+{
+  "name": "gerenciador-de-jogos-zerados",
+  "version": "1.0.0",
+  "description": "Aplicativo desktop em Electron para gerenciar jogos zerados com persistencia local em JSON.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "games",
+    "json",
+    "desktop"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^29.4.6"
+  }
+}

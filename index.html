@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Jogos Zerados</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Biblioteca local de jogos</p>
+          <h1>Gerenciador de Jogos Zerados</h1>
+          <p class="hero-description">
+            Cadastre sua colecao, destaque o que ja foi concluido e mantenha tudo salvo em JSON local.
+          </p>
+        </div>
+
+        <div class="hero-side">
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-label">Jogos</span>
+              <strong id="total-games">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Zerados</span>
+              <strong id="completed-games">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Horas</span>
+              <strong id="played-hours">0h</strong>
+            </article>
+          </div>
+
+          <button id="open-form-button" class="primary-button" type="button">
+            + Adicionar jogo
+          </button>
+        </div>
+      </header>
+
+      <main class="content-layout">
+        <aside id="form-panel" class="panel form-panel is-hidden" aria-hidden="true">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Novo cadastro</p>
+              <h2>Adicionar jogo</h2>
+            </div>
+            <button id="close-form-button" class="ghost-button" type="button" aria-label="Fechar formulario">
+              Fechar
+            </button>
+          </div>
+
+          <form id="game-form" class="game-form">
+            <label class="field">
+              <span>Nome</span>
+              <input id="name" name="name" type="text" maxlength="120" required />
+            </label>
+
+            <label class="field">
+              <span>URL ou caminho da capa</span>
+              <input
+                id="cover"
+                name="cover"
+                type="text"
+                maxlength="500"
+                placeholder="https://... ou C:\imagens\jogo.png"
+              />
+            </label>
+
+            <div class="field-row">
+              <label class="field">
+                <span>Tempo jogado (horas)</span>
+                <input id="hoursPlayed" name="hoursPlayed" type="number" min="0" step="0.1" value="0" required />
+              </label>
+
+              <label class="field">
+                <span>Nota</span>
+                <input id="rating" name="rating" type="number" min="0" max="10" step="0.1" placeholder="Opcional" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Comentario ou feedback</span>
+              <textarea
+                id="comment"
+                name="comment"
+                maxlength="600"
+                rows="5"
+                placeholder="O que fez esse jogo valer seu tempo?"
+              ></textarea>
+            </label>
+
+            <label class="checkbox-field">
+              <input id="completed" name="completed" type="checkbox" />
+              <span>Ja foi zerado</span>
+            </label>
+
+            <div class="form-actions">
+              <button class="secondary-button" type="button" id="reset-form-button">Limpar</button>
+              <button class="primary-button" type="submit">Salvar jogo</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="panel library-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Sua colecao</p>
+              <h2>Biblioteca</h2>
+            </div>
+            <p class="panel-caption">Clique em qualquer card para abrir os detalhes.</p>
+          </div>
+
+          <div id="feedback-banner" class="feedback-banner is-hidden" role="status" aria-live="polite"></div>
+
+          <div id="empty-state" class="empty-state is-hidden">
+            <h3>Nenhum jogo cadastrado ainda</h3>
+            <p>Use o botao de adicionar para montar sua biblioteca local.</p>
+          </div>
+
+          <div id="games-grid" class="games-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="details-backdrop" class="modal-backdrop is-hidden">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="details-title">
+        <button id="close-details-button" class="close-modal-button" type="button" aria-label="Fechar detalhes">
+          Fechar
+        </button>
+
+        <div class="modal-layout">
+          <img id="details-cover" class="modal-cover" alt="" />
+
+          <div class="modal-content">
+            <p id="details-status" class="modal-status"></p>
+            <h2 id="details-title">Detalhes do jogo</h2>
+            <p id="details-meta" class="modal-meta"></p>
+            <p id="details-comment" class="modal-comment"></p>
+
+            <div class="modal-grid">
+              <article class="modal-info-card">
+                <span>Tempo jogado</span>
+                <strong id="details-hours">0h</strong>
+              </article>
+              <article class="modal-info-card">
+                <span>Nota</span>
+                <strong id="details-rating">Sem nota</strong>
+              </article>
+              <article class="modal-info-card">
+                <span>Salvo em</span>
+                <strong id="details-created-at">-</strong>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
