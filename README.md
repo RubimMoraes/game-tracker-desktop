@@ -18,6 +18,8 @@ O Jogos Zerados é um aplicativo desktop minimalista desenvolvido para a organiz
 * **Frontend:** HTML5, CSS3 (Variáveis CSS, Flexbox e Grid) e JavaScript.
 * **Tipografia:** Fonte Outfit obtida via Google Fonts.
 
+#### **Projeto desemvolvido utilizando-se de IA (Codexe  claude)**
+
 ## Instruções de Execução
 
 ### Pré-requisitos
