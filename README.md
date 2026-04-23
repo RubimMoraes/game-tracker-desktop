@@ -1,105 +1,60 @@
-# 🎮 Gerenciador de Jogos Zerados
+# Jogos Zerados
 
-Aplicativo desktop feito com **Electron + HTML + CSS + JavaScript** para registrar sua biblioteca de jogos, destacar jogos já zerados e salvar tudo localmente em **JSON**.
+O Jogos Zerados é um aplicativo desktop minimalista desenvolvido para a organização de bibliotecas de jogos, permitindo o acompanhamento de títulos concluídos e em andamento. Construído com o framework Electron, o projeto prioriza uma interface fluida com persistência de dados local e segura.
 
----
+## Funcionalidades
 
-## ✨ Funcionalidades
+* **Gestão Completa (CRUD):** Adição, edição e remoção de registos de jogos.
+* **Status de Progresso:** Diferenciação visual entre títulos em andamento e títulos concluídos.
+* **Filtros de Navegação:** Organização por categorias através de abas de acesso rápido.
+* **Identidade Visual Personalizada:** Tema escuro com elementos de destaque em azul e bordas amarelas exclusivas para jogos finalizados.
+* **Persistência de Dados:** Armazenamento automático em formato JSON na pasta de dados do utilizador do sistema operativo, garantindo a integridade das informações entre sessões.
+* **Interface Responsiva:** Utilização de painéis laterais para formulários e janelas modais de confirmação.
 
-- Cadastro manual de jogos com:
-  - Nome
-  - URL/caminho da capa
-  - Tempo jogado (horas)
-  - Nota (opcional)
-  - Comentário/feedback
-  - Status de zerado
-- Exibição dos jogos em **layout de grid**.
-- Destaque visual para jogos zerados com borda amarela `#c9ff05`.
-- Modal de detalhes ao clicar no card.
-- Persistência local dos dados (leitura e escrita em JSON).
-- Fallback para imagem quebrada/ausente.
+## Tecnologias Utilizadas
 
----
+* **Electron:** Framework para desenvolvimento de aplicações desktop.
+* **Node.js:** Ambiente de execução do lado do servidor.
+* **Frontend:** HTML5, CSS3 (Variáveis CSS, Flexbox e Grid) e JavaScript.
+* **Tipografia:** Fonte Outfit obtida via Google Fonts.
 
-## 🧱 Tecnologias
+## Instruções de Execução
 
-- **Electron** (aplicativo desktop)
-- **HTML5** (estrutura)
-- **CSS3** (estilo e layout)
-- **JavaScript** (lógica do frontend)
-- **JSON** (armazenamento de dados)
+### Pré-requisitos
+É necessário ter o Node.js instalado no sistema.
 
----
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-utilizador/jogos-zerados.git](https://github.com/seu-utilizador/jogos-zerados.git)
+    ```
+2.  **Aceda ao diretório do projeto:**
+    ```bash
+    cd jogos-zerados
+    ```
+3.  **Instale as dependências necessárias:**
+    ```bash
+    npm install
+    ```
+4.  **Inicie a aplicação:**
+    ```bash
+    npm start
+    ```
 
-## 📁 Estrutura do projeto
+## Compilação do Executável (.exe)
 
-```bash
-jogos_zerados/
-├── index.html
-├── style.css
-├── script.js
-├── main.js
-├── preload.js
-├── dados.json
-├── assets/
-│   └── imagens/
-│       └── .gitkeep
-└── package.json
-```
+Para transformar o projeto num instalador para Windows:
 
----
+1.  Certifique-se de que a dependência `electron-builder` está configurada.
+2.  Execute o comando de compilação:
+    ```bash
+    npm run build
+    ```
+3.  O ficheiro de instalação será gerado no diretório `/dist`.
 
-## ▶️ Como executar
+## Estrutura de Ficheiros
 
-### 1) Pré-requisitos
-
-- Node.js 18+ (recomendado)
-- npm
-
-### 2) Instalar dependências
-
-```bash
-npm install
-```
-
-### 3) Iniciar o app
-
-```bash
-npm start
-```
-
----
-
-## 🧪 Como testar rapidamente
-
-1. Abra o app com `npm start`.
-2. Verifique se os jogos aparecem em cards no grid.
-3. Clique em um card e confirme a abertura do modal de detalhes.
-4. Clique em **+ Adicionar jogo** e cadastre um novo item.
-5. Marque/desmarque **Já foi zerado** e confirme o destaque visual.
-6. Feche e abra o app novamente para validar persistência dos dados.
-
----
-
-## 💾 Persistência e segurança de dados
-
-- Os dados são carregados e salvos por IPC entre renderer e processo principal.
-- A gravação do JSON é feita de forma atômica (arquivo temporário + rename), reduzindo risco de corrupção.
-- Se o JSON estiver inválido, o app tenta se recuperar sem quebrar a execução.
-
----
-
-## 🚧 Melhorias futuras
-
-- Filtros (zerados / não zerados)
-- Busca por nome
-- Ordenação por tempo, nota e nome
-- Estatísticas (horas totais, média de notas)
-- Categorias (RPG, FPS etc.)
-- Importação automática de capas por API
-
----
-
-## 📄 Licença
-
-Este projeto está aberto para fins de estudo e evolução.
+* **main.js:** Gerenciamento do processo principal e manipulação do sistema de ficheiros.
+* **preload.js:** Interface de comunicação segura entre o Node.js e o frontend.
+* **script.js:** Lógica de renderização, aplicação de filtros e manipulação do DOM.
+* **style.css:** Definições de estilo, variáveis de cor e animações.
+* **index.html:** Estrutura hierárquica da interface do utilizador.
