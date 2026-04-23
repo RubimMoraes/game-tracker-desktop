@@ -1,0 +1,22 @@
+[
+  {
+    "id": "4e0fa134-e2f9-4c92-b7cd-c7ac15338adb",
+    "name": "Hollow Knight",
+    "cover": "",
+    "hoursPlayed": 0,
+    "rating": "",
+    "comment": "",
+    "completed": false,
+    "createdAt": "2026-04-23T17:35:08.574Z"
+  },
+  {
+    "id": "2e07c48f-933e-4831-9e84-a0a3c81cd415",
+    "name": "Hollow Knight",
+    "cover": "",
+    "hoursPlayed": 0,
+    "rating": "",
+    "comment": "",
+    "completed": false,
+    "createdAt": "2026-04-23T17:35:06.297Z"
+  }
+]
